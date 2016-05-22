@@ -13,7 +13,7 @@ library(plyr)
 
 
 # SET WD
-setwd("C:/Users/Dan/Documents/Statistics/Coursera/Data Science/03 Getting and Cleaning Data/CourseProject")
+#setwd("C:/Users/Dan/Documents/Statistics/Coursera/Data Science/03 Getting and Cleaning Data/CourseProject")
 
 
 # DOWNLOAD DATA
@@ -184,7 +184,7 @@ length(unique(dat_names$name))
 
 names(dat) <- dat_names$name
 
-write.csv(dat,"FullData.csv")
+write.table(dat,"FullData.txt",row.name=FALSE)
 
 
 
@@ -197,4 +197,4 @@ group_by(dat,activity,subject.id)
 dat_mean <- summarize_each(group_by(dat,activity,subject.id), funs(mean))
 dim(dat_mean)
 
-write.csv(dat_mean,"SummarizedData.csv")
+write.table(dat_mean,"SummarizedData.txt",row.name=FALSE)
